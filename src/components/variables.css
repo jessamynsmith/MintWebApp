@@ -7,17 +7,29 @@
    * ======================================================================== */
 
   --white-base:            hsl(255, 255, 255);
-  --gray-darker:           color(black lightness(+13.5%)); /* #222 */
+  --gray-darker:           rgba(0, 0, 0, 0.9); 
   --gray-dark:             color(black lightness(+25%));   /* #404040 */
   --gray:                  color(black lightness(+33.5%)); /* #555 */
   --gray-light:            color(black lightness(+46.7%)); /* #777 */
   --gray-lighter:          color(black lightness(+93.5%)); /* #eee */
 
+
+  /*
+   * Costum
+   * ======================================================================== */
+  --main-background:       #333;
+  --secondery-background:  #F0F0F0;
+  --font-dark:             #333;
+  --font-light:            #fff;
+  --mint-pink:             #EC008B;
+  --container-max-width:   1170px;
+
   /*
    * Typography
    * ======================================================================== */
 
-  --font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;
+  --font-family-title:     'Roboto', sans-serif;
+  --font-family-base:      'Noto Serif', sans-serif;
 
   /*
    * Layout
@@ -29,10 +41,10 @@
    * Media queries breakpoints
    * ======================================================================== */
 
-  --screen-xs-min:         480px;  /* Extra small screen / phone */
-  --screen-sm-min:         768px;  /* Small screen / tablet */
-  --screen-md-min:         992px;  /* Medium screen / desktop */
-  --screen-lg-min:         1200px; /* Large screen / wide desktop */
+  --screen-xs-min:         481px;  /* Extra small screen / phone */
+  --screen-sm-min:         769px;  /* Small screen / tablet */
+  --screen-md-min:         993px;  /* Medium screen / desktop */
+  --screen-lg-min:         1201px; /* Large screen / wide desktop */
 
   /*
    * Animations
@@ -41,3 +53,8 @@
   --animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;
 
 }
+
+@custom-media --viewport-xs-min (min-width: 481px);
+@custom-media --viewport-sm-min (min-width: 769px);
+@custom-media --viewport-md-min (min-width: 993px);
+@custom-media --viewport-lg-min (min-width: 1201px);

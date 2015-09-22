@@ -1,52 +1,61 @@
-/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-
 @import '../variables.css';
 
-:root {
-  --brand-color: #61dafb;
-}
-
 .Header {
-  background: #373277;
-  color: #fff;
+    z-index: 30;
+    position: fixed;
+    background-color: transparent;
+    width: 100%;
+    height: 90px;
+    transition: all 0.3s;
+    border-bottom: 1px solid #fff;
+
+    &[data-small="true"] {
+		height: 75px;
+		background-color: rgba(255,255,255,1);
+		box-shadow: 0 0 0 0 rgba(0,0,0,1);
+    }
 }
 
-.Header-container {
-  margin: 0 auto;
-  padding: 20px 0;
-  max-width: var(--max-content-width);
+.Header-inner {
+	width: 100%;
+	max-width: var(--container-max-width);
+	margin: 0 auto;
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
 }
 
-.Header-brand {
-  color: color(var(--brand-color) lightness(+10%));
-  text-decoration: none;
-  font-size: 1.75em; /* ~28px */
+.Logo {
+    height: 150%;
+    transform: translateY(25%) translateX(5%);
+    transition: all 0.3s;
+    cursor: pointer;
 }
 
-.Header-brandTxt {
-  margin-left: 10px;
+.Header[data-small="true"] {
+	.Logo  {
+		height: 145%;
+	}
+    .NavigationTrigger span,
+    .NavigationTrigger span:before,
+    .NavigationTrigger span:after {
+        background-color: #333
+    }
 }
 
-.Header-nav {
-  float: right;
-  margin-top: 6px;
+.Header[data-nav-open="true"] {
+    .NavigationTrigger span {
+        background-color: transparent;
+    }  
+    .NavigationTrigger span:before,
+    .NavigationTrigger span:after {
+       background-color: #fff; 
+    } 
 }
 
-.Header-banner {
-  text-align: center;
-}
-
-.Header-bannerTitle {
-  margin: 0;
-  padding: 10px;
-  font-weight: normal;
-  font-size: 4em;
-  line-height: 1em;
-}
-
-.Header-bannerDesc {
-  padding: 0;
-  color: rgba(255, 255, 255, .5);
-  font-size: 1.25em;
-  margin: 0;
+@media(--viewport-sm-min) {
+	.Header[data-small="true"] .Navigation-items {
+		color: #333;
+	}
 }

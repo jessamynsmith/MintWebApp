@@ -1,34 +1,78 @@
-/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
+@import '../variables.css';
 
-.Navigation-link {
-  display: inline-block;
-  padding: 3px 8px;
-  text-decoration: none;
-  font-size: 1.125em; /* ~18px */
+.Navigation {
+    position: fixed;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    background-color: var(--gray-darker);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.5s, visibility 0s 0.5s;
+    visibility: hidden;
 }
 
-.Navigation-link,
-.Navigation-link:active,
-.Navigation-link:visited {
-  color: rgba(255, 255, 255, .6);
+.Navigation[data-open="true"] {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s;
 }
 
-.Navigation-link:hover {
-  color: rgba(255, 255, 255, 1);
+.Navigation-items {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 1.6em;
+    font-family: var(--font-family-title);
+    text-transform: uppercase;
+    margin-bottom: 0;
 }
 
-.Navigation-link--highlight {
-  margin-right: 8px;
-  margin-left: 8px;
-  border-radius: 3px;
-  background: rgba(0, 0, 0, .15);
-  color: #fff;
+.Navigation-item {
+	margin-bottom: 20px;
+    transition: transform 0.5s, opacity 0.5s;
+    opacity: 0;
+    transform: translate3d(0, -80px, 0);
+    cursor: pointer;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
-.Navigation-link--highlight:hover {
-  background: rgba(0, 0, 0, .3);
+.Navigation[data-open="true"] {
+    .Navigation-item {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
 }
 
-.Navigation-spacer {
-  color: rgba(255, 255, 255, .3);
+@media(--viewport-sm-min) {
+    .Navigation {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+    }
+
+    .Navigation-items {
+        flex-direction: row;
+        font-size: 1.2em;
+        color: var(--font-light);
+        margin: 0 10px;
+    }
+
+    .Navigation-item {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        margin-bottom: 0;
+        margin: 0 15px;
+    }
 }

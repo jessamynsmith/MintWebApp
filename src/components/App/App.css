@@ -1,4 +1,6 @@
 @import '../../../node_modules/normalize.css/normalize.css';
+@import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
+@import url(https://fonts.googleapis.com/css?family=Roboto|Noto+Serif:400,700);
 
 /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
 
@@ -14,6 +16,10 @@ html {
   font-size: 1em; /* ~16px; */
   font-family: var(--font-family-base);
   line-height: 1.375; /* ~22px */
+}
+
+body {
+  font-size: 15px;
 }
 
 /*
@@ -78,6 +84,37 @@ fieldset {
 
 textarea {
   resize: vertical;
+}
+
+/*
+ * General custom CSS
+ * ========================================================================== */
+
+h3,
+h2, 
+h1 {
+  font-family: var(--font-family-title);
+  font-weight: bold;
+}
+
+.section-padding {
+  padding: 70px 35px;
+
+  &:last {
+    padding-bottom: 50px;
+  }
+
+  h2 {
+    margin: 0 0 35px;
+
+    +p {
+      font-weight: bold;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
 }
 
 /*

@@ -2,41 +2,40 @@
 
 import { join } from 'path';
 import { Router } from 'express';
-import jade from 'jade';
-import fm from 'front-matter';
 import fs from '../utils/fs';
+import handlebars from 'handlebars';
 
 // A folder with Jade/Markdown/HTML content pages
 const CONTENT_DIR = join(__dirname, './content');
 
-// Extract 'front matter' metadata and generate HTML
-const parseJade = (path, jadeContent) => {
-  const fmContent = fm(jadeContent);
-  const htmlContent = jade.render(fmContent.body);
-  return Object.assign({ path, content: htmlContent }, fmContent.attributes);
+// Extract handlebars metadata and generate HTML
+const parseHbs = (path, hbsContent) => {
+  var template = handlebars.compile(hbsContent);
+  var htmlContent = template(hbsContent.body);
+  return Object.assign({ path, content: htmlContent });
 };
 
 const router = new Router();
 
 router.get('/', async (req, res, next) => {
   try {
-    const path = req.query.path;
+    let path = req.query.path;
 
     if (!path || path === 'undefined') {
       res.status(400).send({error: `The 'path' query parameter cannot be empty.`});
       return;
     }
 
-    let fileName = join(CONTENT_DIR, (path === '/' ? '/index' : path) + '.jade');
+    let fileName = join(CONTENT_DIR, (path === '/' ? '/index' : path) + '.hbs');
     if (!await fs.exists(fileName)) {
-      fileName = join(CONTENT_DIR, path + '/index.jade');
+      fileName = join(CONTENT_DIR, path + '/index.hbs');
     }
 
     if (!await fs.exists(fileName)) {
       res.status(404).send({error: `The page '${path}' is not found.`});
     } else {
       const source = await fs.readFile(fileName, { encoding: 'utf8' });
-      const content = parseJade(path, source);
+      const content = parseHbs(path, source);
       res.status(200).send(content);
     }
   } catch (err) {

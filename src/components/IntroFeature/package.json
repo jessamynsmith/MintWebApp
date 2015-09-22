@@ -1,0 +1,6 @@
+{
+  "name": "IntroFeature",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./IntroFeature.js"
+}
