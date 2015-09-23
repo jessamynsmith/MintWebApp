@@ -1,7 +1,7 @@
 @import '../variables.css';
 
 .IntroFeature {
-	padding: 30px 0;
+	padding: 100px 0;
 }
 
 .IntroFeature-items {
@@ -17,7 +17,7 @@
 .IntroFeature-item {
 	display: flex;
 	flex-grow: 1;
-	padding: 30px;
+	padding: 0 30px;
 }
 
 .IntroFeature-svg {

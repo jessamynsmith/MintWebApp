@@ -1,0 +1,41 @@
+@import '../variables.css';
+
+.ContentSection {
+	background-color: var(--secondery-background);
+	overflow: hidden;
+}
+
+.ContentSection-inner {
+	max-width: var(--container-max-width);
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.ContentSection-img {
+    margin-top: 35px;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+@media(--viewport-sm-min) {
+	.ContentSection-inner {
+		flex-direction: row;
+	}
+
+	.ContentSection-content {
+		min-width: 40%;
+	}
+
+	.ContentSection-img {
+	    margin-top: -46px;
+	}
+	.ContentSection[data-reverse="true"] {
+		direction: rtl;
+
+		.ContentSection-content,
+		.ContentSection-img {
+		    direction: ltr;
+		}
+	}
+}

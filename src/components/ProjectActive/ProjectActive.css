@@ -1,0 +1,57 @@
+@import '../variables.css';
+
+.ProjectActive {
+	position: relative;
+}
+
+.ProjectActive-close {
+	cursor: pointer;
+    position: absolute;
+    right: 35px;
+    top: 20px;
+    z-index: 10;
+    
+    svg {
+    	fill: #fff;
+    	width: 20px;
+    }
+}
+
+.ProjectActive-img {
+	width: 100%;
+	height: calc(100vh - 70px);
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	h1 {
+		font-size: 4em; 
+		color: #fff;
+		z-index: 1;
+		position: relative;
+	}
+}
+
+.ProjectActive-content {
+	max-width: var(--container-max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    h3,
+    p,
+    img {
+    	margin-bottom: 30px;
+    	display: inline-block;
+    }
+}
+
+@media(--viewport-sm-min) {
+
+}

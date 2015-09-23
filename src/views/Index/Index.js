@@ -3,11 +3,18 @@
 import React, { PropTypes, Component } from 'react';
 import styles from './Index.css';
 import withStyles from '../../decorators/withStyles';
+
+import { ABOUT_US, LOCATION } from '../../api/sections';
+import { SOUL, EQUATION } from '../../api/captions';
+
 import HeroVideo from '../../components/HeroVideo';
-import AboutUs from '../../components/AboutUs';
+import ContentSection from '../../components/ContentSection';
 import OurWork from '../../components/OurWork';
 import Header from '../../components/Header';
 import IntroFeature from '../../components/IntroFeature';
+import CaptionSection from '../../components/CaptionSection';
+import Projects from '../../components/Projects';
+import Footer from '../../components/Footer';
 
 @withStyles(styles)
 class Index extends Component {
@@ -23,6 +30,8 @@ class Index extends Component {
   };
 
   render() {
+    const aboutus = ABOUT_US;
+
     this.context.onSetTitle(this.props.title);
     return (
       <div className="Index">
@@ -31,9 +40,13 @@ class Index extends Component {
           <Header />
           <HeroVideo />
           <IntroFeature />
-          <AboutUs />
+          <ContentSection {...ABOUT_US} />
+          <CaptionSection {...SOUL} />
+          <ContentSection {...LOCATION} />
+          <CaptionSection {...EQUATION} />
+          <Projects />
           <OurWork />
-          <footer></footer>
+          <Footer />
 
         </div>
       </div>

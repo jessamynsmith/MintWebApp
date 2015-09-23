@@ -1,5 +1,6 @@
 @import '../../../node_modules/normalize.css/normalize.css';
 @import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
+@import '../../..//node_modules/animate.css/animate.min.css';
 @import url(https://fonts.googleapis.com/css?family=Roboto|Noto+Serif:400,700);
 
 /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -90,15 +91,14 @@ textarea {
  * General custom CSS
  * ========================================================================== */
 
-h3,
-h2, 
-h1 {
+h1, h2, h3, 
+blockquote {
   font-family: var(--font-family-title);
   font-weight: bold;
 }
 
 .section-padding {
-  padding: 70px 35px;
+  padding: 140px 35px;
 
   &:last {
     padding-bottom: 50px;

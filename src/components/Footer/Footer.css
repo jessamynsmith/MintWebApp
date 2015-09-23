@@ -1,0 +1,18 @@
+@import '../variables.css';
+
+.Footer {
+    background-color: #333;
+}
+
+.Footer-inner {
+	max-width: var(--container-max-width);
+	color: #fff;
+	text-align: center;
+	margin: 0 auto;
+	padding-top: 30px; 
+	padding-bottom: 30px; 
+}
+
+
+@media(--viewport-sm-min) {
+}

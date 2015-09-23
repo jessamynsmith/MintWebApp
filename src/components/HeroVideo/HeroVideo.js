@@ -5,6 +5,7 @@ import styles from './HeroVideo.css';
 import withStyles from '../../decorators/withStyles';
 import withViewport from '../../decorators/withViewport';
 import Button from '../Button';
+import Overlay from '../Overlay';
 
 @withViewport
 @withStyles(styles)
@@ -13,7 +14,7 @@ class HeroVideo extends Component {
   render() {
     const isTablet = this.props.viewport.width <= 768;
     const video = <video className="HeroVideo-vid" 
-    	src="videos/Laptop_vid.mov" 
+    	src="videos/mobile_app_dev.mp4" 
     	autoPlay="true" 
     	loop="true"></video>
     
@@ -27,7 +28,7 @@ class HeroVideo extends Component {
         	<span>Brand utility house</span>
           <Button value="contact us" />
         </div>
-        <div className="HeroVideo-overlay"></div>
+        <Overlay />
         {!isTablet ? video : poster}
       </div>
     );
