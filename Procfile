@@ -1,1 +1,1 @@
-web: npm run start
+web: babel-node --eval \"require('./tools/start')().catch(err => console.error(err.stack))\"
