@@ -18,15 +18,15 @@ class IntroFeature extends Component {
     const introItems = [
       {
         title: 'Think',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada, mi scelerisque ullamcorper dictum, dui metus vestibulum tortor, in consequat ligula purus id massa. Integer tincidunt mauris non aliquet lacinia.',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada, mi scelerisque ullamcorper dictum, dui metus vestibulum tortor, in consequat.',
         icon: 'icon-cogs'
       },{
         title: 'Create',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada, mi scelerisque ullamcorper dictum, dui metus vestibulum tortor, in consequat ligula purus id massa. Integer tincidunt mauris non aliquet lacinia.',
+        text: 'Cras malesuada, mi scelerisque ullamcorper dictum, dui metus vestibulum tortor, in consequat ligula purus id massa. Integer tincidunt mauris non aliquet lacinia.',
         icon: 'icon-lab'
       },{
         title: 'Improve',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada, mi scelerisque ullamcorper dictum, dui metus vestibulum tortor, in consequat ligula purus id massa. Integer tincidunt mauris non aliquet lacinia.',
+        text: 'Integer tincidunt mauris non aliquet lacinia. Cras malesuada, mi scelerisque ullamcorper dictum, dui metus vestibulum tortor, in consequat ligula purus id massa.',
         icon: 'icon-loop2'
       }
     ];
@@ -36,11 +36,18 @@ class IntroFeature extends Component {
         __html: '<use xlink:href="svgs/svgdefs.svg#' + introItem.icon + '"></use>'
       };
 
+      const inlineStyle = {
+        animationDelay: (i * 300) + 300 + 'ms'
+      };
+
       return <div key={i} 
         className="IntroFeature-item">
-          <svg viewBox="0 0 32 32" 
-            dangerouslySetInnerHTML={icon}
-            className="IntroFeature-svg"></svg>
+            <div className="wow tada"
+              style={inlineStyle}>
+              <svg viewBox="0 0 32 32" 
+                dangerouslySetInnerHTML={icon}
+                className="IntroFeature-svg"></svg>
+            </div>
             <div className="IntroFeature-text">
               <h3 className="IntroFeature-title">{introItem.title}</h3>
               <p className="IntroFeature-caption">{introItem.text}</p>

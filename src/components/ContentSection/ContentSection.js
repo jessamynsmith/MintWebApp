@@ -15,9 +15,15 @@ class ContentSection extends Component {
 
   render() {
     const imgClass = this.generateImageClass();
+    
     const text = this.props.text.map(function(text, i) {
       return <p key={i}>{text}</p>
     });
+
+    const inlineStyle = {
+      animationDelay: '300ms'
+    };
+
 
     return (
       <article className="ContentSection section-padding"
@@ -31,7 +37,8 @@ class ContentSection extends Component {
             { text }
           </div>
           <img className={imgClass}
-            src={this.props.img} />
+            src={this.props.img}
+            style={inlineStyle} />
         </div>
       </article>
     );

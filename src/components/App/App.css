@@ -105,10 +105,11 @@ blockquote {
   }
 
   h2 {
-    margin: 0 0 35px;
+    margin: 0 0 20px;
 
     +p {
       font-weight: bold;
+      margin: 0 0 20px;      
     }
   }
 

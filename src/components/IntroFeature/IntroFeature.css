@@ -32,8 +32,25 @@
 	margin: 0 0 10px;
 }
 
+.IntroFeature-caption {
+	text-align: center;
+}
+
 @media(--viewport-sm-min) {
 	.IntroFeature-items {
 		flex-direction: row;
+	}
+	.IntroFeature-item {
+		flex-direction: column;	
+		text-align: center;
+	}
+	.IntroFeature-svg {
+		width: auto;
+		height: 50px;
+		margin-right: 0;
+		margin-bottom: 20px;
+	}
+	.IntroFeature-title {
+	    margin: 0 0 20px;
 	}
 }
