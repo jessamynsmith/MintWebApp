@@ -7,8 +7,8 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-import del from 'del';
 import fs from './lib/fs';
+import del from 'del';
 
 /**
  * Cleans up the output (build) directory.
